@@ -19,6 +19,11 @@ SplitTweet allow users to post short message limited to 50 characters.
 
 ## Steps to SplitTweet works
 
+- Declare TWEET_MAX_LENGTH variable, so we can easy to change it later
+```swift
+private let TWEET_MAX_LENGTH = 50
+```
+
 - **Step 1:** Standard input tweet.
 ```swift
 extension String { 
