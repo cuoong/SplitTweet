@@ -46,11 +46,10 @@ class TweetSplit: TweetSplitType {
         }
         
         let parts = tweetString.components(separatedBy:" ")
-        //Check string more than 50 chracters
-        for item in parts {
-            if item.count > TWEET_MAX_LENGTH {
-                return []
-            }
+        
+        //Check string more than TWEET_MAX_LENGTH characters
+        guard parts.first(where: { $0.count > TWEET_MAX_LENGTH }) == nil else {
+            return []
         }
         
         var maxNumberSubTweet = 1
